@@ -31,6 +31,10 @@ private slots:
 
     void on_sliderPozitive_valueChanged(int value);
 
+    void on_dialPositive_valueChanged(int value);
+
+    void on_dialNigative_valueChanged(int value);
+
     void on_pushButton_clicked();
 
 

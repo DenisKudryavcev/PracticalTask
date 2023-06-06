@@ -22,6 +22,7 @@ void MainWindow::on_radioButtonScroll_clicked(bool checked)
     if (checked){
         ui->groupBoxScrollBars->setEnabled(true);
         ui->groupBoxSliders->setEnabled(false);
+        ui->groupBoxCircles->setEnabled(false);
     }
 }
 
@@ -30,6 +31,7 @@ void MainWindow::on_radioButtonSpin_clicked(bool checked)
     if (checked){
         ui->groupBoxScrollBars->setEnabled(false);
         ui->groupBoxSliders->setEnabled(false);
+        ui->groupBoxCircles->setEnabled(false);
     }
 }
 
@@ -39,6 +41,7 @@ void MainWindow::on_radioButtonSlider_clicked(bool checked)
 
         ui->groupBoxScrollBars->setEnabled(false);
         ui->groupBoxSliders->setEnabled(true);
+        ui->groupBoxCircles->setEnabled(false);
     }
 
 }
@@ -48,6 +51,7 @@ void MainWindow::on_radioButtonDial_clicked(bool checked)
     if (checked){
         ui->groupBoxScrollBars->setEnabled(false);
         ui->groupBoxSliders->setEnabled(false);
+        ui->groupBoxCircles->setEnabled(true);
     }
 
 }
@@ -64,18 +68,6 @@ void MainWindow::on_scrollBarNigative_valueChanged(int value)
 {
     ui->label->setText(QString::number(value));
 }
-
-void MainWindow::on_spinBoxPozitive_valueChanged(int arg1)
-{
-    ui->label_2->setText(QString::number(arg1));
-}
-
-
-void MainWindow::on_spinBoxNigative_valueChanged(int arg1)
-{
-    ui->label->setText(QString::number(arg1));
-}
-
 
 void MainWindow::on_sliderNegative_valueChanged(int value)
 {
@@ -122,10 +114,16 @@ void MainWindow::on_pushButton_clicked()
         pozitive = ui->scrollBarPozitive->value();
         negative = ui->scrollBarNigative->value();
     }
+
     else if (ui->radioButtonSlider->isChecked() == true){
         pozitive = ui->sliderPozitive->value();
         negative = ui->sliderNegative->value();
     }
+    else if (ui->radioButtonDial->isChecked() == true){
+        pozitive = ui->dialPositive->value();
+        negative = ui->dialNigative->value();
+    }
+
     for (int i = 0; i < n; i++) {
         mas[i] = randomBetween(pozitive, negative);
     }
@@ -192,4 +190,3 @@ void MainWindow::writeFile(QString line){
     file.write(count);
     file.close();
 }
-
