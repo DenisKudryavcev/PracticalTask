@@ -27,17 +27,9 @@ private slots:
 
     void on_scrollBarNigative_valueChanged(int value);
 
-    void on_spinBoxPozitive_valueChanged(int arg1);
-
-    void on_spinBoxNigative_valueChanged(int arg1);
-
     void on_sliderNegative_valueChanged(int value);
 
     void on_sliderPozitive_valueChanged(int value);
-
-    void on_dialPositive_valueChanged(int value);
-
-    void on_dialNigative_valueChanged(int value);
 
     void on_pushButton_clicked();
 
