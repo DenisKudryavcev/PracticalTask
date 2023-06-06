@@ -1,2 +1,6 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/new/icons">
+        <file>icons/free-icon-ico-5966376.ico</file>
+        <file>icons/icons8-воспроизведение-30.ico</file>
+    </qresource>
+</RCC>

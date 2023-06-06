@@ -17,8 +17,8 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../../Downloads/free-icon-ico-5966376.ico</normaloff>../../Downloads/free-icon-ico-5966376.ico</iconset>
+   <iconset resource="icons.qrc">
+    <normaloff>:/new/icons/icons/free-icon-ico-5966376.ico</normaloff>:/new/icons/icons/free-icon-ico-5966376.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background: rgb(84, 180, 199)</string>
@@ -186,8 +186,8 @@ background: rgb(130, 170, 255)</string>
       <string>Результат</string>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>../../Downloads/icons8-воспроизведение-30.ico</normaloff>../../Downloads/icons8-воспроизведение-30.ico</iconset>
+      <iconset resource="icons.qrc">
+       <normaloff>:/new/icons/icons/icons8-воспроизведение-30.ico</normaloff>:/new/icons/icons/icons8-воспроизведение-30.ico</iconset>
      </property>
     </widget>
    </widget>
@@ -745,6 +745,8 @@ background: rgb(121, 244, 255)</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
