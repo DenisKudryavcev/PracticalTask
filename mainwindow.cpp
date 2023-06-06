@@ -21,6 +21,7 @@ void MainWindow::on_radioButtonScroll_clicked(bool checked)
 {
     if (checked){
         ui->groupBoxScrollBars->setEnabled(true);
+        ui->groupBoxSpins->setEnabled(false);
         ui->groupBoxSliders->setEnabled(false);
         ui->groupBoxCircles->setEnabled(false);
     }
@@ -30,6 +31,7 @@ void MainWindow::on_radioButtonSpin_clicked(bool checked)
 {
     if (checked){
         ui->groupBoxScrollBars->setEnabled(false);
+        ui->groupBoxSpins->setEnabled(true);
         ui->groupBoxSliders->setEnabled(false);
         ui->groupBoxCircles->setEnabled(false);
     }
@@ -40,6 +42,7 @@ void MainWindow::on_radioButtonSlider_clicked(bool checked)
     if (checked){
 
         ui->groupBoxScrollBars->setEnabled(false);
+        ui->groupBoxSpins->setEnabled(false);
         ui->groupBoxSliders->setEnabled(true);
         ui->groupBoxCircles->setEnabled(false);
     }
@@ -50,6 +53,7 @@ void MainWindow::on_radioButtonDial_clicked(bool checked)
 {
     if (checked){
         ui->groupBoxScrollBars->setEnabled(false);
+        ui->groupBoxSpins->setEnabled(false);
         ui->groupBoxSliders->setEnabled(false);
         ui->groupBoxCircles->setEnabled(true);
     }
@@ -68,6 +72,18 @@ void MainWindow::on_scrollBarNigative_valueChanged(int value)
 {
     ui->label->setText(QString::number(value));
 }
+
+void MainWindow::on_spinBoxPozitive_valueChanged(int arg1)
+{
+    ui->label_2->setText(QString::number(arg1));
+}
+
+
+void MainWindow::on_spinBoxNigative_valueChanged(int arg1)
+{
+    ui->label->setText(QString::number(arg1));
+}
+
 
 void MainWindow::on_sliderNegative_valueChanged(int value)
 {
@@ -114,7 +130,10 @@ void MainWindow::on_pushButton_clicked()
         pozitive = ui->scrollBarPozitive->value();
         negative = ui->scrollBarNigative->value();
     }
-
+    else if (ui->radioButtonSpin->isChecked() == true){
+        pozitive = ui->spinBoxPozitive->value();
+        negative = ui->spinBoxNigative->value();
+    }
     else if (ui->radioButtonSlider->isChecked() == true){
         pozitive = ui->sliderPozitive->value();
         negative = ui->sliderNegative->value();
@@ -190,3 +209,4 @@ void MainWindow::writeFile(QString line){
     file.write(count);
     file.close();
 }
+
